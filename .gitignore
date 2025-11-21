@@ -4,6 +4,15 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+.idea/
+.vscode/
+bin/
+out/
+obj/
+nuts-1.4.0.zip
+nuts.sln.DotSettings.user
+
+
 # Build outputs
 /dist
 /build
