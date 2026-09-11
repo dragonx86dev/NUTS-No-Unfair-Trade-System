@@ -4,7 +4,7 @@ namespace NutsServer;
 
 public record ModMetadata : IModMetadata
 {
-    public string ModGuid { get; init; } = "com.dragonx86.nuts";
+    public string ModGuid { get; init; } = "com.vinihns.nuts";
     public string Name { get; init; } = "No Unfair Trade System (NUTS)";
     public string Author { get; init; } = "ViniHNS, DragonX86-dev";
     public SemanticVersioning.Version Version { get; init; } = new("1.5.0");

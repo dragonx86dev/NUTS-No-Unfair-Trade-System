@@ -4,15 +4,12 @@ using NutsClient.Patches;
 
 namespace NutsClient;
 
-[BepInPlugin("com.dragonx86.nuts", "No Unfair Trade System (NUTS)", "1.5.0")]
+[BepInPlugin("com.vinihns.nuts", "No Unfair Trade System (NUTS)", "1.5.0")]
 public class Plugin : BaseUnityPlugin
 {
     public static ManualLogSource LogSource;
     
     public static bool IsDebugEnabled => ModConfig.EnableDebugLogging.Value;
-    public static bool ShouldDisableMyOffers => ModConfig.DisableMyOffersToggle.Value;
-    public static bool ShouldDisableLockedIcon => ModConfig.DisableLockedIcon.Value;
-    public static bool ShouldDisableAddOfferButton => ModConfig.DisableFleaButtons.Value;
     public static bool ShouldDisableFleaWarning => ModConfig.DisableFleaWarning.Value;
     
     public static bool ShouldDisableFleaMarketTab => ModConfig.DisableFleaMarketTab.Value;
@@ -43,20 +40,6 @@ public class Plugin : BaseUnityPlugin
             "Disable Flea Market Tab",
             false,
             "Disable the flea market tab button in the main menu taskbar. REQUIRES GAME RESTART"
-        );
-
-        ModConfig.DisableMyOffersToggle = Config.Bind(
-            "2. User Interface",
-            "Disable My Offers Toggle",
-            true,
-            "Disable the 'My Offers' toggle button in the flea market screen. REQUIRES GAME RESTART"
-        );
-
-        ModConfig.DisableLockedIcon = Config.Bind(
-            "2. User Interface",
-            "Disable Locked Icon",
-            true,
-            "Disable the locked icon that appears near flea market elements. REQUIRES GAME RESTART"
         );
 
         ModConfig.DisableContextMenuAddOffer = Config.Bind(
