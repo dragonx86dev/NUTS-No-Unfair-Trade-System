@@ -1,5 +1,6 @@
 using BepInEx;
 using BepInEx.Logging;
+using NutsClient.Patches;
 
 namespace NutsClient;
 
@@ -86,7 +87,7 @@ public class Plugin : BaseUnityPlugin
 
         if (ModConfig.DisableFleaWarning.Value)
         {
-            // new FleaWarningPatch().Enable();
+            new FleaWarningPatch().Enable();
             LogSource.LogInfo("Flea Warning Patch enabled");
         }
 
