@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <LangVersion>latest</LangVersion>
+        <Version>1.5.0</Version>
+        <Configuration>Release</Configuration>
+        <AssemblyName>nuts</AssemblyName>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Reference Include="Assembly-CSharp">
+            <HintPath>..\Shared\Assembly-CSharp.dll</HintPath>
+        </Reference>
+        <Reference Include="BepInEx">
+            <HintPath>..\Shared\BepInEx.dll</HintPath>
+        </Reference>
+        <Reference Include="0Harmony">
+            <HintPath>..\Shared\0Harmony.dll</HintPath>
+        </Reference>
+        <Reference Include="SPT.Reflection">
+            <HintPath>..\Shared\spt-reflection.dll</HintPath>
+        </Reference>
+        <Reference Include="Sirenix.Serialization">
+            <HintPath>..\Shared\Sirenix.Serialization.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine">
+            <HintPath>..\Shared\UnityEngine.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.CoreModule">
+            <HintPath>..\Shared\UnityEngine.CoreModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UI">
+            <HintPath>..\Shared\UnityEngine.UI.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.TextMeshPro">
+            <HintPath>..\Shared\Unity.TextMeshPro.dll</HintPath>  
+        </Reference>
+    </ItemGroup>
+
+</Project>
