@@ -45,13 +45,6 @@ public class Plugin : BaseUnityPlugin
             "Disable the flea market tab button in the main menu taskbar. REQUIRES GAME RESTART"
         );
 
-        ModConfig.DisableFleaButtons = Config.Bind(
-            "2. User Interface",
-            "Disable Add Offer Button",
-            true,
-            "Disable the 'Add Offer' button in the flea market screen. REQUIRES GAME RESTART"
-        );
-
         ModConfig.DisableMyOffersToggle = Config.Bind(
             "2. User Interface",
             "Disable My Offers Toggle",
@@ -90,17 +83,22 @@ public class Plugin : BaseUnityPlugin
             new FleaWarningPatch().Enable();
             LogSource.LogInfo("Flea Warning Patch enabled");
         }
-
-        if (ModConfig.DisableFleaButtons.Value || ModConfig.DisableMyOffersToggle.Value || ModConfig.DisableLockedIcon.Value)
+        
+        if (ModConfig.DisableFleaMarketTab.Value)
         {
-            // new FleaAddOfferButtonPatch().Enable();
-            LogSource.LogInfo("Flea UI Elements Patch enabled");
+            new FleaButtonPatch().Enable();
+            LogSource.LogInfo("Flea Market Tab Patch enabled");
         }
-
+        
         if (ModConfig.DisableContextMenuAddOffer.Value)
         {
-            // new FleaAddOfferContextMenuPatch().Enable();
+            new FleaAddOfferContextMenuPatch().Enable();
             LogSource.LogInfo("Context Menu Patch enabled");
         }
+        
+        LogSource.LogInfo($"[NUTS] Flea Warning: {(ModConfig.DisableFleaWarning.Value ? "DISABLED" : "enabled")}");
+        LogSource.LogInfo($"[NUTS] Context Menu: {(ModConfig.DisableContextMenuAddOffer.Value ? "DISABLED" : "enabled")}");
+        LogSource.LogInfo($"[NUTS] Flea Tab: {(ModConfig.DisableFleaMarketTab.Value ? "DISABLED" : "enabled")}");
+        LogSource.LogInfo($"[NUTS] Debug Logging: {(ModConfig.EnableDebugLogging.Value ? "ENABLED" : "disabled")}");
     }
 }

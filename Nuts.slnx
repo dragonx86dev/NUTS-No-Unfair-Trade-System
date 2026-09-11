@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="NutsClient/NutsClient.csproj" />
+  <Project Path="NutsServer/NutsServer.csproj" />
+  <Project Path="Packaging/Packaging.csproj" />
+</Solution>
